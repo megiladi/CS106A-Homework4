@@ -1,0 +1,15 @@
+# Attempt 1
+
+def something(s):
+    if 'some' in s or 'thing' in s:
+        return True
+    else:
+        return False
+
+# Attempt 2 - Make non-case-sensitive
+
+def something(s):
+    if 'some' in s.lower() or 'thing' in s.lower():
+        return True
+    else:
+        return False
