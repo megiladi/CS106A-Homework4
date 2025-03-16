@@ -1,0 +1,21 @@
+# Attempt 1
+
+def find_plus(s):
+    
+    # Set variables
+    first = s.find('+')
+    first_plus = first + 1
+    first_plus_plus = first + 2
+    second = s.find('+',first_plus)
+
+    # Check if +
+    if first == -1:
+        return ''
+    
+    # Check if 2 or more +
+    elif second == -1:
+        return ''
+        
+    # Get the string between +s
+    else:
+        return s[first_plus:second]
