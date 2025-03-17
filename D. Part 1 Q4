@@ -1,0 +1,10 @@
+# Attempt 1
+
+def char_misc(s):
+    result = ""
+    
+    for ch in s:
+        if not ch.isalpha() and not ch.isdigit():
+            result += ch
+            
+    return result
