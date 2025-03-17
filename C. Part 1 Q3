@@ -1,0 +1,73 @@
+# Attempt 1
+
+def at_sum(s):
+    # Set variables
+    first = s.find('@')
+    first_plus = first + 1
+    first_plus_plus = first + 2
+    second = s.find('@',first_plus)
+
+    # Check if @
+    if first == -1:
+        return 0
+    
+    # Check if 2 or more @
+    elif second == -1:
+        return 0
+        
+    # Return sum of digits after @ 1 and 2
+    else:
+        return s[first_plus,second]
+
+# Attempt 2 - Check if integers follow each @ and change the final return to an addition and not a parse / extract
+
+def at_sum(s):
+    # Set variables
+    first = s.find('@')
+    first_plus = first + 1
+    second = s.find('@',first_plus)
+    first_digit = s[first + 1]
+    second_digit = s[second + 1]
+
+    # Check if @
+    if first == -1:
+        return 0
+    
+    # Check if 2 or more @
+    if second == -1:
+        return 0
+    
+    # Check if both are digits
+    if first_digit.isdigit() and second_digit.isdigit():
+        return int(first_digit) + int(second_digit)
+    else:
+        return 0
+
+# Attempt 3 - Order checks vs. defining variables so as not to create an error
+
+def at_sum(s):
+    # Set variables
+    first = s.find('@')
+    first_plus = first + 1
+    second = s.find('@',first_plus)
+    second_plus = second + 1
+
+    # Check if in bounds
+    if first_plus >= len(s) or second_plus >= len(s):
+        return 0
+        
+    # Check if @
+    if first == -1:
+        return 0
+    
+    # Check if 2 or more @
+    if second == -1:
+        return 0
+    
+    # Check if both are digits
+    first_digit = s[first + 1]
+    second_digit = s[second + 1]
+    if first_digit.isdigit() and second_digit.isdigit():
+        return int(first_digit) + int(second_digit)
+    else:
+        return 0
