@@ -1,0 +1,41 @@
+# Attempt 1
+
+def post_at(s):
+    
+    # Set variables
+    first = s.find('@')
+    first_plus_one = first + 1
+    first_plus_three = first + 3
+
+    # Check if @
+    if first == -1:
+        return None
+     
+    # Check if 3+ ch after the @
+    if first_plus_three == -1:
+        return None
+        
+    # Get the string after @
+    else:
+        return s[first_plus_one:]   
+
+# Attempt 2 - Change the check since the variable is a number not actually going back and redoing the s.find (line 35)
+
+def post_at(s):
+    
+    # Set variables
+    first = s.find('@')
+    first_plus_one = first + 1
+
+    # Check if @
+    if first == -1:
+        return None
+     
+    # Check if 3+ ch after the @
+    if (len(s) - first - 1) < 3:
+        return None
+        
+    # Get the string after @
+    else:
+        return s[first_plus_one:]   
+    
