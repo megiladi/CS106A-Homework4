@@ -1,0 +1,32 @@
+# Attempt 1
+
+def lower_upper(s):
+    
+    result = ''
+    
+    for i in range (len(s)):
+        if s[i].islower():
+            result += i
+    
+    for i in range (len(s)):
+        if s[i].isupper():
+            result += i
+            
+    return result
+
+# Attempt 2 - Brackets... 25 and 29
+
+def lower_upper(s):
+    
+    result = ''
+    
+    for ch in range (len(s)):
+        if s[ch].islower():
+            result += s[ch]
+        
+    for ch in range (len(s)):
+        if s[ch].isupper():
+            result += s[ch]
+            
+    return result
+    
