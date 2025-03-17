@@ -1,0 +1,28 @@
+# Attempt 1 
+
+def first_alpha(s):
+    
+    for i in range (len(s)-1):
+        if i.isalpha():
+            return i
+        else:
+            -1
+
+# Attempt 2 - Realizing I need brackets in line 16
+
+def first_alpha(s):
+    
+    for i in range (len(s)-1):
+        if s[i].isalpha():
+            return i
+        else:
+            -1
+
+# Attempt 3 - realized range is UBNI and return is better than else since it won't force an early exit of -1 from the loop
+
+def first_alpha(s):
+    
+    for i in range (len(s)):
+        if s[i].isalpha():
+            return i
+    return -1
