@@ -1,0 +1,34 @@
+# Attempt 1
+
+def char_plus(s):
+    
+    return = ''
+    
+    for ch in range(len(s)-1):
+        if s[ch].isalpha() or s[ch] == '+':
+            return += s[ch]
+            
+# Attempt 2 - Replace 'return' with 'result'
+
+def char_plus(s):
+    
+    result = ''
+    
+    for ch in range(len(s)-1):
+        if s[ch].isalpha() or s[ch] == '+':
+            result += s[ch]
+            
+    return result
+
+# Attempt 3 - Reminded of UBNI on line 28...
+
+def char_plus(s):
+    
+    result = ''
+    
+    for ch in range(len(s)):
+        if s[ch].isalpha() or s[ch] == '+':
+            result += s[ch]
+            
+    return result
+            
