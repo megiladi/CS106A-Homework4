@@ -1,0 +1,43 @@
+# Attempt 1
+
+def main():
+    args = sys.argv[1:]
+    # 2 command line argument patterns:
+    # -encrypt key filename
+    # -decrypt key filename
+    # Call encrypt_file() or decrypt_file() based on the args.
+    if len(args) == 3:
+        command = args[0]
+        key = args[1]
+        filename = args[2]
+
+        if command == '-encrypt':
+            encrypt_file(filename,key)
+        elif command == 'decrypt':
+            decrypt_file(filename,key)
+        else:
+            print("Unknown command. Use -encrypt or -decrypt.")
+   else:
+        print("Usage: py crypto.py -encrypt/-decrypt key filename")
+
+# Attempt 2 - Indentation fixing in line 40 and adding the '-' to line 38
+
+def main():
+    args = sys.argv[1:]
+    # 2 command line argument patterns:
+    # -encrypt key filename
+    # -decrypt key filename
+    # Call encrypt_file() or decrypt_file() based on the args.
+    if len(args) == 3:
+        command = args[0]
+        key = args[1]
+        filename = args[2]
+
+        if command == '-encrypt':
+            encrypt_file(filename,key)
+        elif command == '-decrypt':
+            decrypt_file(filename,key)
+        else:
+            print("Unknown command. Use -encrypt or -decrypt.")
+    else:
+        print("Usage: py crypto.py -encrypt/-decrypt key filename")
