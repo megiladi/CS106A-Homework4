@@ -1,0 +1,28 @@
+# Attempt 1
+
+def decrypt_str(source, slug, s):
+    """
+    Given source and slug lists and encrypted string s,
+    return the decrypted form of s.
+    >>> z_slug = compute_slug('z')
+    >>> decrypt_str(ALPHABET, z_slug, 'Zmc khjd z sgtmcdqanks gd ezkkr.')
+    'And like a thunderbolt he falls.'
+    """
+    for ch in s:
+        decrypted_s = ''
+        decrypted_s += encrypt_char(slug,source,ch)
+
+    return decrypted_s
+
+# Attempt 2 - move the variable naming out of the loop in line 19
+
+    decrypted_s = ''
+
+    for ch in s:
+        decrypted_s += encrypt_char(slug,source,ch)
+
+    return decrypted_s
+
+# Attempt 3 - Claude generated one liner based on the prompt saying it's possible
+
+    return ''.join(encrypt_char(slug, source, ch) for ch in s)
