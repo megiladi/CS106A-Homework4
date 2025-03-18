@@ -1,0 +1,23 @@
+# Attempt 1 
+
+def alpha_list(s):
+    
+    list = ['']
+    
+    for ch in range(len(s)):
+        if s[ch].isalpha():
+            list.append(s[ch])
+    
+    return list
+
+# Attempt 2 - Realize the list needs to be truly empty as the '' was being logged as the first entry
+
+def alpha_list(s):
+    
+    list = []
+    
+    for ch in range(len(s)):
+        if s[ch].isalpha():
+            list.append(s[ch])
+    
+    return list
