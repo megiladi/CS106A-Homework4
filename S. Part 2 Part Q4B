@@ -1,0 +1,10 @@
+# Attempt 1
+
+    slug = compute_slug(key)
+    decrypted_line = ''
+
+    with open(filename) as f:
+        for line in f:
+            line = line.strip()
+            decrypted_line = decrypt_str(ALPHABET,slug,line)
+            print(decrypted_line)
