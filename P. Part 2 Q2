@@ -1,0 +1,78 @@
+# Attempt 1
+
+def encrypt_char(source, slug, ch):
+    """
+    Given source and slug lists,
+    if the char ch is in source, return
+    its encrypted form. Otherwise return ch unchanged.
+    >>> encrypt_char(['a', 'b', 'c', 'd'], ['d', 'c', 'b', 'a'], 'a')
+    'd'
+    >>> encrypt_char(['a', 'b', 'c', 'd'], ['d', 'c', 'b', 'a'], 'c')
+    'b'
+    >>> encrypt_char(['a', 'b', 'c', 'd'], ['d', 'c', 'b', 'a'], 'C')
+    'B'
+    >>> encrypt_char(['a', 'b', 'c', 'd'], ['d', 'c', 'b', 'a'], ',')
+    ','
+    >>> # Compute 'z' slug, store it in a var named z_slug
+    >>> # and pass that in as the slug for the tests.
+    >>> z_slug = compute_slug('z')
+    >>> encrypt_char(ALPHABET, z_slug, 'A')
+    'Z'
+    >>> encrypt_char(ALPHABET, z_slug, 'n')
+    'm'
+    >>> encrypt_char(ALPHABET, z_slug, ' ')
+    ' '
+    """
+    result = []
+
+    for ch in range(len(source)):
+        result += slug[ch]
+
+    return result
+
+# Attempt 2 - Added the initial check and redid the code to actually answer the question (i.e., not build entire list but just do one char)
+
+    if ch == '' or ch == ',':
+        return ch
+    
+    else:
+        if ch.isupper():
+            return source[slug.find(ch)].upper
+        else:
+            return source[slug.find(ch)].lower
+
+# Attempt 3 - Tried fixing variable calls... tired
+
+if ch == '' or ch == ',':
+    return ch
+
+else:
+
+    ch_lower = ch.lower()
+
+    if ch_lower in slug:
+        index = source.index[ch_lower]
+        encrypted_char = slug[index]
+
+    if ch.isupper():
+        return encrypted_char.upper
+    else:
+        return encrypted_char
+
+# Attempt 4 - Had to change the slug vs. source in line 71, brackets in line 72, and parens in line 76
+
+    if ch == '' or ch == ',':
+        return ch
+
+    else:
+
+        ch_lower = ch.lower()
+
+        if ch_lower in source:
+            index = source.index(ch_lower)
+            encrypted_char = slug[index]
+
+            if ch.isupper():
+                return encrypted_char.upper()
+            else:
+                return encrypted_char
