@@ -1,0 +1,38 @@
+# Attempt 1
+
+def special(s):
+    
+    first = s.find('#')
+    alpha = s[first+1].isalpha()
+    digit = s[first+2].isdigit()
+    
+    # first '#' followed by an alpha and then a digit
+    
+    if first != -1 and alpha != False and digit != False:
+        return int(digit) * int(digit)
+        
+    else:
+        return -1
+
+# Attempt 2 - A ton of changes including adding the len check and using the alpha and digit properly in line 32 and using the right expressions for 33
+
+def special(s):
+    
+    first = s.find('#')
+    
+    # check length / viability
+    if first == -1 or first + 2 >= len(s):
+        return -1
+        
+    alpha = s[first+1].isalpha()
+    digit = s[first+2].isdigit()
+    
+    # first '#' followed by an alpha and then a digit
+    
+    if first != -1 and alpha and digit:
+        return int(s[first+2]) * int(s[first+2])
+        
+    else:
+        return -1
+    
+    
