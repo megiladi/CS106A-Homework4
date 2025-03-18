@@ -76,3 +76,23 @@ else:
                 return encrypted_char.upper()
             else:
                 return encrypted_char
+
+# Attempt 5 - Added another else at the bottom to deal with None values
+
+    if ch == '' or ch == ',':
+        return ch
+
+    else:
+
+        ch_lower = ch.lower()
+
+        if ch_lower in source:
+            index = source.index(ch_lower)
+            encrypted_char = slug[index]
+
+            if ch.isupper():
+                return encrypted_char.upper()
+            else:
+                return encrypted_char
+        else:
+            return ch
