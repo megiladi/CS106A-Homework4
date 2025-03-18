@@ -1,0 +1,25 @@
+# Attempt 1
+
+def at_swap(s):
+    first = s.find('@@@')
+    
+    if first != -1:
+        beginning = s[first+1:]
+        end = s[:first]
+        return beginning + end
+
+# Attempt 2 - Adjusted variables to get the right spacing and added the else
+
+def at_swap(s):
+    first = s.find('@@@')
+    first_p1 = first + 1
+    first_p2 = first_p1 + 1
+    first_p3 = first_p2 + 1
+    
+    if first != -1:
+        beginning = s[first_p3:]
+        end = s[:first]
+        return beginning + end
+        
+    else:
+        return ''
