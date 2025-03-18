@@ -1,0 +1,44 @@
+# Attempt 1
+
+def compute_slug(key):
+    """
+    Given a key string, compute and return the len-26 slug list for it.
+    >>> compute_slug('z')
+    ['z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y']
+    >>> compute_slug('Bananas!')
+    ['b', 'a', 'n', 's', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'o', 'p', 'q', 'r', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    >>> compute_slug('Life, Liberty, and')
+    ['l', 'i', 'f', 'e', 'b', 'r', 't', 'y', 'a', 'n', 'd', 'c', 'g', 'h', 'j', 'k', 'm', 'o', 'p', 'q', 's', 'u', 'v', 'w', 'x', 'z']
+    >>> compute_slug('Zounds!')
+    ['z', 'o', 'u', 'n', 'd', 's', 'a', 'b', 'c', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'p', 'q', 'r', 't', 'v', 'w', 'x', 'y']
+    """
+
+    slug = []
+
+    for ch in range(len(key)):
+        if key[ch].isalpha() and key[ch] not in slug:
+            slug.append(key[ch].lower())
+
+    slug_tail = ALPHABET
+
+    for ch in range(len(slug_tail)):
+        if slug_tail[ch] in slug:
+            slug_tail.remove(slug_tail[ch])
+
+    return slug + slug_tail
+
+# Attempt 2 - Added .lower() to line 35 and prevented impacting Alphabet because of how variables actually work and then switched from removing to appending
+
+    slug = []
+
+    for ch in range(len(key)):
+        if key[ch].isalpha() and key[ch].lower() not in slug:
+            slug.append(key[ch].lower())
+
+    slug_tail = []
+
+    for ch in ALPHABET:
+        if ch not in slug:
+            slug_tail.append(ch)
+
+    return slug + slug_tail
