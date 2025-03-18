@@ -1,0 +1,15 @@
+# Attempt 1
+
+def yolo_index(strings):
+    try:
+        return strings.index('yolo')
+    except ValueError:  # This line is correct
+        return -1
+
+# Attempt 2 - Switched to an if statement
+
+def yolo_index(strings):
+    if 'yolo' in strings:
+        return strings.index('yolo')
+    else:
+        return -1
