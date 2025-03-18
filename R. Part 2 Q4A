@@ -1,0 +1,40 @@
+# Attempt 1
+
+def encrypt_file(filename, key):
+    """
+    Given filename and key, compute and
+    print the encrypted form of its lines.
+    >>> encrypt_file('test-plain.txt', 'z')
+    zab
+    wxy
+    """
+    slug = compute_slug(key)
+    encrypted_file = ''
+
+    with open(filename) as f:
+        for line in f:
+            line = line.strip()
+            encrypted_file += encrypt_str(ALPHABET,slug,line)
+    print(encrypted_file)
+
+# Attempt 2 - make it print line by line, as instructions says to 
+
+    slug = compute_slug(key)
+    encrypted_line = ''
+
+    with open(filename) as f:
+        for line in f:
+            line = line.strip()
+            encrypted_line += encrypt_str(ALPHABET,slug,line)
+    print(encrypted_line)
+
+# Attempt 3 - Make the prints the right indent and remove the + in 39 so that the line is only one line in future iterations
+
+    slug = compute_slug(key)
+    encrypted_line = ''
+
+    with open(filename) as f:
+        for line in f:
+            line = line.strip()
+            encrypted_line = encrypt_str(ALPHABET,slug,line)
+            print(encrypted_line)
